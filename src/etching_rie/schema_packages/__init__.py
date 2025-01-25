@@ -24,7 +24,7 @@ class EtchingEntryPoint(SchemaPackageEntryPoint):
         return m_package
 
 
-sintering = EtchingEntryPoint(
+etching_entry_point = EtchingEntryPoint(
     name='Etching',
     description='Schema package for describing a etching process.',
 )
