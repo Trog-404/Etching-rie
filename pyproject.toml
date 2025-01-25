@@ -114,7 +114,7 @@ where = ["src"]
 
 schema_package_entry_point = "etching_rie.schema_packages:schema_package_entry_point"
 
-etching_entry_point = "etching_rie.schema_packages:rie"
+etching_entry_point = "etching_rie.schema_packages:etching_entry_point"
 
 
 
