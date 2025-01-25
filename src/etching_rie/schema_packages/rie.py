@@ -16,25 +16,24 @@
 # limitations under the License.
 #
 
-from nomad.datamodel.metainfo.basesections import Process
-from nomad.datamodel.metainfo.basesections import ProcessStep
-from nomad.datamodel.metainfo.eln import Chemical
-from nomad.datamodel.metainfo.eln import Instrument
-from nomad.datamodel.data import EntryData
-import numpy as np
 from typing import (
     TYPE_CHECKING,
 )
+
+import numpy as np
+from nomad.datamodel.data import (
+    ArchiveSection,
+    EntryData,
+)
+from nomad.datamodel.metainfo.basesections import Process, ProcessStep
+from nomad.datamodel.metainfo.eln import Chemical, Instrument
 from nomad.metainfo import (
     Package,
     Quantity,
-    SubSection,
     Section,
+    SubSection,
 )
-from nomad.datamodel.data import (
-    EntryData,
-    ArchiveSection,
-)
+
 if TYPE_CHECKING:
     from nomad.datamodel.datamodel import (
         EntryArchive,
