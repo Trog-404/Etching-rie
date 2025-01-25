@@ -16,8 +16,8 @@ schema_package_entry_point = NewSchemaPackageEntryPoint(
     description='New schema package entry point configuration.',
 )
 
-class EtchingEntryPoint(SchemaPackageEntryPoint):
 
+class EtchingEntryPoint(SchemaPackageEntryPoint):
     def load(self):
         from etching_rie.schema_packages.rie import m_package
 
