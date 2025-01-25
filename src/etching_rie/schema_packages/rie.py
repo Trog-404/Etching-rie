@@ -21,6 +21,7 @@ from typing import (
 )
 
 import numpy as np
+import pandas as pd
 from nomad.datamodel.data import (
     ArchiveSection,
     EntryData,
@@ -33,6 +34,7 @@ from nomad.metainfo import (
     Section,
     SubSection,
 )
+from nomad.units import ureg
 
 if TYPE_CHECKING:
     from nomad.datamodel.datamodel import (
@@ -175,6 +177,14 @@ class Workflow(Process, EntryData, ArchiveSection):
         repeats=True,
     )
 
+    data_file = Quantity(
+        type=str,
+        description='The recipe file for the rie process.',
+        a_eln={
+            'component': 'FileEditQuantity',
+        },
+    )
+
     def normalize(self, archive: 'EntryArchive', logger: 'BoundLogger') -> None:
         """
         The normalizer for the `Workflow` class.
@@ -185,6 +195,60 @@ class Workflow(Process, EntryData, ArchiveSection):
             logger (BoundLogger): A structlog logger.
         """
         super().normalize(archive, logger)
+        if self.data_file:
+            with archive.m_context.raw_file(self.data_file) as file:
+                df = pd.read_csv(file, sep=';')
+            steps = []
+            for i, row in df.iterrows():
+                step = Step()
+                step.name = row['step name']
+                step.Chamber_pressure = ureg.Quantity(
+                    float(row['Chamber pressure [mbar]']), 'mbar'
+                )
+                step.Chuck_temperature = ureg.Quantity(
+                    float(row['Chuck temperature [C]']), 'celsius'
+                )
+                step.Power = ureg.Quantity(float(row['Power [watt]']), 'watt')
+                step.Bias = ureg.Quantity(float(row['Bias [V]']), 'volt')
+                step.duration = ureg.Quantity(
+                    float(row['etching time [min]']), 'minute'
+                )
+                flux = []
+                fluximeter = Massflow_controller()
+                if float(row['SF6 massflow [sccm]']) != 0:
+                    fluximeter.massflow = ureg.Quantity(
+                        float(row['SF6 massflow [sccm]']),'centimeter^3/minute'
+                    )
+                    fluximeter.chemical_formula = 'SF6'
+                    fluximeter.name = 'SF6_controller'
+                    flux.append(fluximeter)
+                fluximeter1 = Massflow_controller()
+                if float(row['CHF3 massflow [sccm]']) != 0:
+                    fluximeter1.massflow = ureg.Quantity(
+                        float(row['CHF3 massflow [sccm]']),'centimeter^3/minute'
+                    )
+                    fluximeter1.chemical_formula = 'CHF3'
+                    fluximeter1.name = 'CHF3_controller'
+                    flux.append(fluximeter1)
+                fluximeter2 = Massflow_controller()
+                if float(row['O2 massflow [sccm]']) != 0:
+                    fluximeter2.massflow = ureg.Quantity(
+                        float(row['O2 massflow [sccm]']),'centimeter^3/minute'
+                    )
+                    fluximeter2.chemical_formula = 'O2'
+                    fluximeter2.name = 'O2_controller'
+                    flux.append(fluximeter2)
+                fluximeter3 = Massflow_controller()
+                if float(row['Ar massflow [sccm]']) != 0:
+                    fluximeter3.massflow = ureg.Quantity(
+                        float(row['Ar massflow [sccm]']),'centimeter^3/minute'
+                    )
+                    fluximeter3.chemical_formula = 'Ar'
+                    fluximeter3.name = 'Ar_controller'
+                    flux.append(fluximeter3)
+                step.fluximeters = flux
+                steps.append(step)
+            self.steps = steps
 
 
 m_package.__init_metainfo__()

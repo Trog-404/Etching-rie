@@ -1,0 +1,539 @@
+{
+  "data": {
+    "m_def": "etching_rie.schema_packages.rie.Workflow",
+    "name": "test sintering",
+    "datetime": "2025-01-25T16:12:48.893433+00:00",
+    "data_file": "Prova_rie.csv",
+    "steps": [
+      {
+        "name": "puliza in O2 dopo litografia",
+        "duration": 120.0,
+        "Chamber_pressure": 0.01,
+        "Chuck_temperature": 25.0,
+        "Power": 50.0,
+        "Bias": 20.0,
+        "fluximeters": [
+          {
+            "name": "O2_controller",
+            "chemical_formula": "O2",
+            "massflow": 5.0
+          },
+          {
+            "name": "Ar_controller",
+            "chemical_formula": "Ar",
+            "massflow": 25.0
+          }
+        ]
+      },
+      {
+        "name": "etching del silicio per 2,5um",
+        "duration": 300.0,
+        "Chamber_pressure": 0.001,
+        "Chuck_temperature": 10.0,
+        "Power": 150.0,
+        "Bias": 75.0,
+        "fluximeters": [
+          {
+            "name": "SF6_controller",
+            "chemical_formula": "SF6",
+            "massflow": 20.0
+          },
+          {
+            "name": "CHF3_controller",
+            "chemical_formula": "CHF3",
+            "massflow": 20.0
+          },
+          {
+            "name": "O2_controller",
+            "chemical_formula": "O2",
+            "massflow": 10.0
+          },
+          {
+            "name": "Ar_controller",
+            "chemical_formula": "Ar",
+            "massflow": 5.0
+          }
+        ]
+      },
+      {
+        "name": "puliza finale dei residui di processo con Ar e O2",
+        "duration": 60.0,
+        "Chamber_pressure": 0.01,
+        "Chuck_temperature": 25.0,
+        "Power": 40.0,
+        "Bias": 20.0,
+        "fluximeters": [
+          {
+            "name": "O2_controller",
+            "chemical_formula": "O2",
+            "massflow": 10.0
+          },
+          {
+            "name": "Ar_controller",
+            "chemical_formula": "Ar",
+            "massflow": 20.0
+          }
+        ]
+      }
+    ]
+  },
+  "workflow2": {
+    "name": "test sintering"
+  },
+  "metadata": {
+    "entry_name": "test_sintering.archive.yaml",
+    "entry_type": "Workflow",
+    "mainfile": "/workspaces/Etching-rie/tests/data/test_sintering.archive.yaml",
+    "text_search_contents": [
+      "SF6",
+      "puliza finale dei residui di processo con Ar e O2",
+      "SF6_controller",
+      "Prova_rie.csv",
+      "Ar",
+      "CHF3_controller",
+      "CHF3",
+      "O2_controller",
+      "puliza in O2 dopo litografia",
+      "etching del silicio per 2,5um",
+      "O2",
+      "test sintering",
+      "Ar_controller"
+    ],
+    "n_quantities": 69,
+    "quantities": [
+      "",
+      "data",
+      "data.data_file",
+      "data.datetime",
+      "data.name",
+      "data.steps",
+      "data.steps.Bias",
+      "data.steps.Chamber_pressure",
+      "data.steps.Chuck_temperature",
+      "data.steps.Power",
+      "data.steps.duration",
+      "data.steps.fluximeters",
+      "data.steps.fluximeters.chemical_formula",
+      "data.steps.fluximeters.massflow",
+      "data.steps.fluximeters.name",
+      "data.steps.name",
+      "metadata",
+      "metadata.entry_name",
+      "metadata.entry_type",
+      "metadata.mainfile",
+      "metadata.quantities",
+      "metadata.section_defs",
+      "metadata.section_defs.definition_id",
+      "metadata.section_defs.definition_qualified_name",
+      "metadata.section_defs.used_directly",
+      "metadata.sections",
+      "results",
+      "results.eln",
+      "results.eln.methods",
+      "results.eln.names",
+      "results.eln.sections",
+      "results.properties",
+      "workflow2",
+      "workflow2.name"
+    ],
+    "sections": [
+      "etching_rie.schema_packages.rie.Massflow_controller",
+      "etching_rie.schema_packages.rie.Step",
+      "etching_rie.schema_packages.rie.Workflow",
+      "nomad.datamodel.datamodel.EntryArchive",
+      "nomad.datamodel.datamodel.EntryMetadata",
+      "nomad.datamodel.metainfo.workflow.Workflow",
+      "nomad.datamodel.results.ELN",
+      "nomad.datamodel.results.Properties",
+      "nomad.datamodel.results.Results"
+    ],
+    "section_defs": [
+      {
+        "definition_qualified_name": "etching_rie.schema_packages.rie.Massflow_controller",
+        "definition_id": "3df5cba88b5ba72d150eee1d8a3d4ad9b9f5675f",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "etching_rie.schema_packages.rie.Step",
+        "definition_id": "12aaa1b4c9edfbada52a91be3a800c365bb0355d",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "etching_rie.schema_packages.rie.Workflow",
+        "definition_id": "561353488b3fd8f890e1ed79a614ac5db52aba6e",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.data.ArchiveSection",
+        "definition_id": "7047cbff9980abff17cce4b1b6b0d1c783505b7f",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.data.EntryData",
+        "definition_id": "538f52fd8d52b29372066f878319c6aeb03b74d2",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.datamodel.EntryArchive",
+        "definition_id": "4216415b63b9b0d253c23c64a73e327879c12e91",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.datamodel.EntryMetadata",
+        "definition_id": "6edfa503af63b84d6a6021c227d00137b4c1cc9c",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.basesections.Activity",
+        "definition_id": "f10e73406ba5e32e6569029b1c983e0fd4c4be97",
+        "used_directly": false
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.basesections.ActivityStep",
+        "definition_id": "a99fab14031097eb4b33562274029bd735d753fa",
+        "used_directly": false
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.basesections.BaseSection",
+        "definition_id": "106bafb5140238b4afe8128b8c341b5b3e927838",
+        "used_directly": false
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.basesections.Process",
+        "definition_id": "4900ed1417b54796d9802ef005f2030503f723d8",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.basesections.ProcessStep",
+        "definition_id": "c1ab49b91cd0a92bd199740e3a6a2184a8e1498e",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.eln.Chemical",
+        "definition_id": "b9741b05b0c3c9d1577b08bb60d11c8950d1e85c",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.eln.ElnBaseSection",
+        "definition_id": "01bd0ff2d4b348b4f4175477cb3ac68a46ae1970",
+        "used_directly": false
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.eln.ElnWithFormulaBaseSection",
+        "definition_id": "771b719dbb6e20ab686d851c628bf2e3a2da0c56",
+        "used_directly": false
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.workflow.Task",
+        "definition_id": "66b7dd52b0f1ed539ac6a198ef1cc53f1ab6b8af",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.metainfo.workflow.Workflow",
+        "definition_id": "7cc5d041361d8c5f11aa25e5fcc461979e7db173",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.results.ELN",
+        "definition_id": "eeed330bd18d40f3a2a00cc35ba6f58808d0c543",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.results.Properties",
+        "definition_id": "668532333a833a28e493a1e496d3702081567b42",
+        "used_directly": true
+      },
+      {
+        "definition_qualified_name": "nomad.datamodel.results.Results",
+        "definition_id": "c0333058eb872eda870d53ca35021694cc06dc2e",
+        "used_directly": true
+      }
+    ],
+    "search_quantities": [
+      {
+        "id": "data.data_file#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Workflow.data_file",
+        "path_archive": "data.data_file",
+        "str_value": "Prova_rie.csv"
+      },
+      {
+        "id": "data.steps.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.basesections.ActivityStep.name",
+        "path_archive": "data.steps.0.name",
+        "str_value": "puliza in O2 dopo litografia"
+      },
+      {
+        "id": "data.steps.Chamber_pressure#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Chamber_pressure",
+        "path_archive": "data.steps.0.Chamber_pressure",
+        "float_value": 0.01
+      },
+      {
+        "id": "data.steps.Chuck_temperature#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Chuck_temperature",
+        "path_archive": "data.steps.0.Chuck_temperature",
+        "float_value": 25.0
+      },
+      {
+        "id": "data.steps.Power#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Power",
+        "path_archive": "data.steps.0.Power",
+        "float_value": 50.0
+      },
+      {
+        "id": "data.steps.Bias#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Bias",
+        "path_archive": "data.steps.0.Bias",
+        "float_value": 20.0
+      },
+      {
+        "id": "data.steps.duration#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.basesections.ProcessStep.duration",
+        "path_archive": "data.steps.0.duration",
+        "float_value": 120.0
+      },
+      {
+        "id": "data.steps.fluximeters.massflow#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Massflow_controller.massflow",
+        "path_archive": "data.steps.0.fluximeters.0.massflow",
+        "float_value": 5.0
+      },
+      {
+        "id": "data.steps.fluximeters.chemical_formula#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnWithFormulaBaseSection.chemical_formula",
+        "path_archive": "data.steps.0.fluximeters.0.chemical_formula",
+        "str_value": "O2"
+      },
+      {
+        "id": "data.steps.fluximeters.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnBaseSection.name",
+        "path_archive": "data.steps.0.fluximeters.0.name",
+        "str_value": "O2_controller"
+      },
+      {
+        "id": "data.steps.fluximeters.massflow#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Massflow_controller.massflow",
+        "path_archive": "data.steps.0.fluximeters.1.massflow",
+        "float_value": 25.0
+      },
+      {
+        "id": "data.steps.fluximeters.chemical_formula#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnWithFormulaBaseSection.chemical_formula",
+        "path_archive": "data.steps.0.fluximeters.1.chemical_formula",
+        "str_value": "Ar"
+      },
+      {
+        "id": "data.steps.fluximeters.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnBaseSection.name",
+        "path_archive": "data.steps.0.fluximeters.1.name",
+        "str_value": "Ar_controller"
+      },
+      {
+        "id": "data.steps.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.basesections.ActivityStep.name",
+        "path_archive": "data.steps.1.name",
+        "str_value": "etching del silicio per 2,5um"
+      },
+      {
+        "id": "data.steps.Chamber_pressure#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Chamber_pressure",
+        "path_archive": "data.steps.1.Chamber_pressure",
+        "float_value": 0.001
+      },
+      {
+        "id": "data.steps.Chuck_temperature#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Chuck_temperature",
+        "path_archive": "data.steps.1.Chuck_temperature",
+        "float_value": 10.0
+      },
+      {
+        "id": "data.steps.Power#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Power",
+        "path_archive": "data.steps.1.Power",
+        "float_value": 150.0
+      },
+      {
+        "id": "data.steps.Bias#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Bias",
+        "path_archive": "data.steps.1.Bias",
+        "float_value": 75.0
+      },
+      {
+        "id": "data.steps.duration#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.basesections.ProcessStep.duration",
+        "path_archive": "data.steps.1.duration",
+        "float_value": 300.0
+      },
+      {
+        "id": "data.steps.fluximeters.massflow#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Massflow_controller.massflow",
+        "path_archive": "data.steps.1.fluximeters.0.massflow",
+        "float_value": 20.0
+      },
+      {
+        "id": "data.steps.fluximeters.chemical_formula#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnWithFormulaBaseSection.chemical_formula",
+        "path_archive": "data.steps.1.fluximeters.0.chemical_formula",
+        "str_value": "SF6"
+      },
+      {
+        "id": "data.steps.fluximeters.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnBaseSection.name",
+        "path_archive": "data.steps.1.fluximeters.0.name",
+        "str_value": "SF6_controller"
+      },
+      {
+        "id": "data.steps.fluximeters.massflow#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Massflow_controller.massflow",
+        "path_archive": "data.steps.1.fluximeters.1.massflow",
+        "float_value": 20.0
+      },
+      {
+        "id": "data.steps.fluximeters.chemical_formula#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnWithFormulaBaseSection.chemical_formula",
+        "path_archive": "data.steps.1.fluximeters.1.chemical_formula",
+        "str_value": "CHF3"
+      },
+      {
+        "id": "data.steps.fluximeters.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnBaseSection.name",
+        "path_archive": "data.steps.1.fluximeters.1.name",
+        "str_value": "CHF3_controller"
+      },
+      {
+        "id": "data.steps.fluximeters.massflow#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Massflow_controller.massflow",
+        "path_archive": "data.steps.1.fluximeters.2.massflow",
+        "float_value": 10.0
+      },
+      {
+        "id": "data.steps.fluximeters.chemical_formula#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnWithFormulaBaseSection.chemical_formula",
+        "path_archive": "data.steps.1.fluximeters.2.chemical_formula",
+        "str_value": "O2"
+      },
+      {
+        "id": "data.steps.fluximeters.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnBaseSection.name",
+        "path_archive": "data.steps.1.fluximeters.2.name",
+        "str_value": "O2_controller"
+      },
+      {
+        "id": "data.steps.fluximeters.massflow#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Massflow_controller.massflow",
+        "path_archive": "data.steps.1.fluximeters.3.massflow",
+        "float_value": 5.0
+      },
+      {
+        "id": "data.steps.fluximeters.chemical_formula#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnWithFormulaBaseSection.chemical_formula",
+        "path_archive": "data.steps.1.fluximeters.3.chemical_formula",
+        "str_value": "Ar"
+      },
+      {
+        "id": "data.steps.fluximeters.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnBaseSection.name",
+        "path_archive": "data.steps.1.fluximeters.3.name",
+        "str_value": "Ar_controller"
+      },
+      {
+        "id": "data.steps.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.basesections.ActivityStep.name",
+        "path_archive": "data.steps.2.name",
+        "str_value": "puliza finale dei residui di processo con Ar e O2"
+      },
+      {
+        "id": "data.steps.Chamber_pressure#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Chamber_pressure",
+        "path_archive": "data.steps.2.Chamber_pressure",
+        "float_value": 0.01
+      },
+      {
+        "id": "data.steps.Chuck_temperature#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Chuck_temperature",
+        "path_archive": "data.steps.2.Chuck_temperature",
+        "float_value": 25.0
+      },
+      {
+        "id": "data.steps.Power#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Power",
+        "path_archive": "data.steps.2.Power",
+        "float_value": 40.0
+      },
+      {
+        "id": "data.steps.Bias#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Step.Bias",
+        "path_archive": "data.steps.2.Bias",
+        "float_value": 20.0
+      },
+      {
+        "id": "data.steps.duration#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.basesections.ProcessStep.duration",
+        "path_archive": "data.steps.2.duration",
+        "float_value": 60.0
+      },
+      {
+        "id": "data.steps.fluximeters.massflow#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Massflow_controller.massflow",
+        "path_archive": "data.steps.2.fluximeters.0.massflow",
+        "float_value": 10.0
+      },
+      {
+        "id": "data.steps.fluximeters.chemical_formula#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnWithFormulaBaseSection.chemical_formula",
+        "path_archive": "data.steps.2.fluximeters.0.chemical_formula",
+        "str_value": "O2"
+      },
+      {
+        "id": "data.steps.fluximeters.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnBaseSection.name",
+        "path_archive": "data.steps.2.fluximeters.0.name",
+        "str_value": "O2_controller"
+      },
+      {
+        "id": "data.steps.fluximeters.massflow#etching_rie.schema_packages.rie.Workflow",
+        "definition": "etching_rie.schema_packages.rie.Massflow_controller.massflow",
+        "path_archive": "data.steps.2.fluximeters.1.massflow",
+        "float_value": 20.0
+      },
+      {
+        "id": "data.steps.fluximeters.chemical_formula#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnWithFormulaBaseSection.chemical_formula",
+        "path_archive": "data.steps.2.fluximeters.1.chemical_formula",
+        "str_value": "Ar"
+      },
+      {
+        "id": "data.steps.fluximeters.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.eln.ElnBaseSection.name",
+        "path_archive": "data.steps.2.fluximeters.1.name",
+        "str_value": "Ar_controller"
+      },
+      {
+        "id": "data.name#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.basesections.BaseSection.name",
+        "path_archive": "data.name",
+        "str_value": "test sintering"
+      },
+      {
+        "id": "data.datetime#etching_rie.schema_packages.rie.Workflow",
+        "definition": "nomad.datamodel.metainfo.basesections.Activity.datetime",
+        "path_archive": "data.datetime",
+        "datetime_value": "2025-01-25T16:12:48.893433+00:00"
+      }
+    ]
+  },
+  "results": {
+    "properties": {},
+    "eln": {
+      "sections": [
+        "Workflow"
+      ],
+      "names": [
+        "test sintering"
+      ],
+      "methods": [
+        "Workflow"
+      ]
+    }
+  }
+}
