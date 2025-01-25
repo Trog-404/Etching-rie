@@ -77,7 +77,7 @@ select = [
     "UP",
     # isort
     "I",
-    # pylint 
+    # pylint
     "PL",
 ]
 
@@ -113,6 +113,8 @@ where = ["src"]
 [project.entry-points.'nomad.plugin']
 
 schema_package_entry_point = "etching_rie.schema_packages:schema_package_entry_point"
+
+etching_entry_point = "etching_rie.schema_packages:rie"
 
 
 
