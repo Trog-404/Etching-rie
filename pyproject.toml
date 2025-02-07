@@ -113,8 +113,8 @@ where = ["src"]
 [project.entry-points.'nomad.plugin']
 
 schema_package_entry_point = "etching_rie.schema_packages:schema_package_entry_point"
-
 etching_entry_point = "etching_rie.schema_packages:etching_entry_point"
+app_entry_point = "etching_rie.apps:app_entry_point"
 
 
 
