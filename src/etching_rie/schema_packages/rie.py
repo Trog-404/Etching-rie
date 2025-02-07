@@ -217,7 +217,7 @@ class Workflow(Process, EntryData, ArchiveSection):
                 fluximeter = Massflow_controller()
                 if float(row['SF6 massflow [sccm]']) != 0:
                     fluximeter.massflow = ureg.Quantity(
-                        float(row['SF6 massflow [sccm]']),'centimeter^3/minute'
+                        float(row['SF6 massflow [sccm]']), 'centimeter^3/minute'
                     )
                     fluximeter.chemical_formula = 'SF6'
                     fluximeter.name = 'SF6_controller'
@@ -225,7 +225,7 @@ class Workflow(Process, EntryData, ArchiveSection):
                 fluximeter1 = Massflow_controller()
                 if float(row['CHF3 massflow [sccm]']) != 0:
                     fluximeter1.massflow = ureg.Quantity(
-                        float(row['CHF3 massflow [sccm]']),'centimeter^3/minute'
+                        float(row['CHF3 massflow [sccm]']), 'centimeter^3/minute'
                     )
                     fluximeter1.chemical_formula = 'CHF3'
                     fluximeter1.name = 'CHF3_controller'
@@ -233,7 +233,7 @@ class Workflow(Process, EntryData, ArchiveSection):
                 fluximeter2 = Massflow_controller()
                 if float(row['O2 massflow [sccm]']) != 0:
                     fluximeter2.massflow = ureg.Quantity(
-                        float(row['O2 massflow [sccm]']),'centimeter^3/minute'
+                        float(row['O2 massflow [sccm]']), 'centimeter^3/minute'
                     )
                     fluximeter2.chemical_formula = 'O2'
                     fluximeter2.name = 'O2_controller'
@@ -241,7 +241,7 @@ class Workflow(Process, EntryData, ArchiveSection):
                 fluximeter3 = Massflow_controller()
                 if float(row['Ar massflow [sccm]']) != 0:
                     fluximeter3.massflow = ureg.Quantity(
-                        float(row['Ar massflow [sccm]']),'centimeter^3/minute'
+                        float(row['Ar massflow [sccm]']), 'centimeter^3/minute'
                     )
                     fluximeter3.chemical_formula = 'Ar'
                     fluximeter3.name = 'Ar_controller'
